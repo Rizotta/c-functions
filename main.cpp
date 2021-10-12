@@ -4,13 +4,13 @@ using namespace std;
 void FillRand(int arr[], const unsigned int N);					// Заполняет массив случайными числами
 void Print(int arr[], const unsigned int N);					// Выводит массив на экран
 void ReversePrint(int arr[], const unsigned int N);				// Выводит массив в обратном порядке на экран
-int Sum(int arr[], const unsigned int N);						// Возвращает сумму массива
+int Sum(int arr[], const unsigned int N);					// Возвращает сумму массива
 double Avg(int arr[], const unsigned int N);					// Возвращает cреднее арифметическое элементов массива
 int MinValueIn(int arr[], const unsigned int N);				// Возвращает минимальное значение из массива
 int MaxValueIn(int arr[], const unsigned int N);				// Возвращает максимальное значение из массива
-void Sort(int arr[], const unsigned int N);						// Сортирует массив в порядке возрастания
-void ShiftLeft(int arr[], const unsigned int N, int shift);		// Выполняет циклический сдвиг влево на заданное число элементов
-void ShiftRight(int arr[], const unsigned int N, int shift);	// Выполняет циклический сдвиг вправо на заданное число элементов
+void Sort(int arr[], const unsigned int N);					// Сортирует массив в порядке возрастания
+void ShiftLeft(int arr[], const unsigned int N, int shift);			// Выполняет циклический сдвиг влево на заданное число элементов
+void ShiftRight(int arr[], const unsigned int N, int shift);			// Выполняет циклический сдвиг вправо на заданное число элементов
 
 void main()
 {
@@ -97,7 +97,7 @@ void Sort(int arr[], const unsigned int N)
 	int temp;
 	for (int i = 0; i < N; i++)
 	{
-		for (int j = (N - 1); j > i; j--)
+		for (int j = N - 1; j > i; j--)
 		{
 			if (arr[j] < arr[j - 1])
 			{
