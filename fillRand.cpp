@@ -10,7 +10,6 @@ void FillRand(int arr[], const unsigned int N, int minRand, int maxRand)
 		arr[i] = rand() % (maxRand - minRand) + minRand;	// значения от minRand до maxRand
 	}
 }
-
 void FillRand(double arr[], const unsigned int N, int minRand, int maxRand)
 {
 	minRand *= 100;

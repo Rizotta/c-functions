@@ -1,5 +1,4 @@
 #pragma once
-
 #include"stdafx.h"
 #include"constants.h"
 void FillRand(int arr[], const unsigned int N, int minRand = 0, int maxRand = 100);											// «аполн€ет массив случайными числами
