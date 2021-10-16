@@ -15,13 +15,13 @@ void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS
 
 
 void ReversePrint(int arr[], const unsigned int N);				// Выводит массив в обратном порядке на экран
-int Sum(int arr[], const unsigned int N);					// Возвращает сумму массива
+int Sum(int arr[], const unsigned int N);						// Возвращает сумму массива
 double Avg(int arr[], const unsigned int N);					// Возвращает cреднее арифметическое элементов массива
 int MinValueIn(int arr[], const unsigned int N);				// Возвращает минимальное значение из массива
 int MaxValueIn(int arr[], const unsigned int N);				// Возвращает максимальное значение из массива
-void Sort(int arr[], const unsigned int N);					// Сортирует массив в порядке возрастания
-void ShiftLeft(int arr[], const unsigned int N, int shift);			// Выполняет циклический сдвиг влево на заданное число элементов
-void ShiftRight(int arr[], const unsigned int N, int shift);			// Выполняет циклический сдвиг вправо на заданное число элементов
+void Sort(int arr[], const unsigned int N);						// Сортирует массив в порядке возрастания
+void ShiftLeft(int arr[], const unsigned int N, int shift);		// Выполняет циклический сдвиг влево на заданное число элементов
+void ShiftRight(int arr[], const unsigned int N, int shift);	// Выполняет циклический сдвиг вправо на заданное число элементов
 
 
 void main()
