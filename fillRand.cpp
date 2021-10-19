@@ -4,19 +4,20 @@ void FillRand(int arr[], const unsigned int N, int minRand, int maxRand)
 {
 	for (unsigned int i = 0; i < N; i++)
 	{
-		//arr[i] = rand();				// случайные значения
-		//arr[i] = rand() % 100;		// значения меньше 100
-		//arr[i] = rand() % 50 + 50;	// значения от 50 до 100
+		//arr[i] = rand();									// случайные значения
+		//arr[i] = rand() % 100;							// значения меньше 100
+		//arr[i] = rand() % 50 + 50;						// значения от 50 до 100
 		arr[i] = rand() % (maxRand - minRand) + minRand;	// значения от minRand до maxRand
 	}
 }
+
 void FillRand(double arr[], const unsigned int N, int minRand, int maxRand)
 {
 	minRand *= 100;
 	maxRand *= 100;
 	for (unsigned int i = 0; i < N; i++)
 	{
-		arr[i] = (long long)rand() % ((long long)maxRand - minRand) + minRand;
+		arr[i] = rand() % ((long long)maxRand - minRand) + minRand;
 		arr[i] /= 100;
 	}
 }

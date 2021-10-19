@@ -8,6 +8,7 @@ void Print(int arr[], const unsigned int N)
 	}
 	cout << endl;
 }
+
 void Print(double arr[], const unsigned int N)
 {
 	for (unsigned int i = 0; i < N; i++)
@@ -16,6 +17,7 @@ void Print(double arr[], const unsigned int N)
 	}
 	cout << endl;
 }
+
 void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
