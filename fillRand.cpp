@@ -2,7 +2,7 @@
 
 void FillRand(int arr[], const unsigned int N, int minRand, int maxRand)
 {
-	for (unsigned int i = 0; i < N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		//arr[i] = rand();									// случайные значения
 		//arr[i] = rand() % 100;							// значения меньше 100
@@ -15,7 +15,7 @@ void FillRand(double arr[], const unsigned int N, int minRand, int maxRand)
 {
 	minRand *= 100;
 	maxRand *= 100;
-	for (unsigned int i = 0; i < N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		arr[i] = rand() % ((long long)maxRand - minRand) + minRand;
 		arr[i] /= 100;

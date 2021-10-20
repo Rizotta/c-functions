@@ -4,3 +4,7 @@
 void Print(int arr[], const unsigned int N);										// Выводит массив с целыми значениями на экран
 void Print(double arr[], const unsigned int N);										// Выводит массив с вещественными значениями на экран
 void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);	// Выводит многомерный массив с целыми значениями на экран
+
+void ReversePrint(int arr[], const unsigned int N);											// Выводит массив с целыми значениями на экран в обратном порядке
+void ReversePrint(double arr[], const unsigned int N);										// Выводит массив с вещественными значениями на экран в обратном порядке
+void ReversePrint(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);	// Выводит многомерный массив с целыми значениями на экран в обратном порядке
