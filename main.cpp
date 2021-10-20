@@ -1,6 +1,7 @@
 ﻿#include"FillRand.h"
 #include"Print.h"
 #include"Sort.h"
+#include"Shift.h"
 
 void main()
 {
@@ -34,4 +35,18 @@ void main()
 	Sort(brr, N);
 	cout << "Третий отсортированный массив: \n";
 	Sort(i_arr_2, ROWS, COLS);
+	cout << endl;
+
+	int shift;
+	cout << "Введите величину сдвига => ";  cin >> shift;
+	cout << "Первый массив, сдвинутый на " << shift << " влево: \t";
+	ShiftLeft(arr, N, shift);
+	cout << "Первый массив, сдвинутый на " << shift << " вправо: \t";
+	ShiftRight(arr, N, shift);
+	cout << endl;
+	cout << "Второй массив, сдвинутый на " << shift << " влево: \t";
+	ShiftLeft(brr, N, shift);
+	cout << "Второй массив, сдвинутый на " << shift << " вправо: \t";
+	ShiftRight(brr, N, shift);
+	cout << endl;
 }

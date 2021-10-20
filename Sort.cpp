@@ -1,4 +1,5 @@
-#include"Print.h"
+#include"Sort.h"
+
 void Sort(int arr[], const unsigned int N)
 {
 	for (int i = 1; i < N; i++)

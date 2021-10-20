@@ -142,11 +142,13 @@
     <ClCompile Include="FillRand.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Print.cpp" />
+    <ClCompile Include="Shift.cpp" />
     <ClCompile Include="Sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
     <ClInclude Include="FillRand.h" />
+    <ClInclude Include="Shift.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Print.h" />
