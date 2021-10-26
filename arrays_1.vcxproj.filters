@@ -44,7 +44,7 @@
     <ClInclude Include="Print.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Сonstants.h">
+    <ClInclude Include="Constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sort.h">

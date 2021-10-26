@@ -1,18 +1,22 @@
-#pragma once
-#include"Сonstants.h"
+п»ї#pragma once
+#include"Constants.h"
 
-int Sum(int arr[], const unsigned int N);												// Возвращает сумму массива
+// Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјСѓ РјР°СЃСЃРёРІР°
+int Sum(int arr[], const unsigned int N);												
 double Sum(double arr[], const unsigned int N);											
 int Sum(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);			
 
-double Avg(int arr[], const unsigned int N);											// Возвращает cреднее арифметическое массива
+// Р’РѕР·РІСЂР°С‰Р°РµС‚ cСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ РјР°СЃСЃРёРІР°
+double Avg(int arr[], const unsigned int N);											
 double Avg(double arr[], const unsigned int N);											
 double Avg(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);		
 
-int MinValueIn(int arr[], const unsigned int N);										// Возвращает минимальное значение из массива
+// Р’РѕР·РІСЂР°С‰Р°РµС‚ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РёР· РјР°СЃСЃРёРІР°
+int MinValueIn(int arr[], const unsigned int N);										
 double MinValueIn(double arr[], const unsigned int N);									
 int MinValueIn(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);	
 
-int MaxValueIn(int arr[], const unsigned int N);										// Возвращает максимальное значение из массива
+// Р’РѕР·РІСЂР°С‰Р°РµС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РёР· РјР°СЃСЃРёРІР°
+int MaxValueIn(int arr[], const unsigned int N);										
 double MaxValueIn(double arr[], const unsigned int N);									
 int MaxValueIn(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);	

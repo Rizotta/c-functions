@@ -13,7 +13,7 @@ void main()
 
 	setlocale(LC_ALL, "");
 	int arr_types;
-	cout << "Сколько массивов отобразить? \n1 - одномерный int,\n2 - одномерный double, \n3 - двумерный int";
+	cout << "Сколько массивов отобразить? \n1 - одномерный int,\n2 - и одномерный double, \n3 - и двумерный int";
 	cout << "\nВведите количество = > "; cin >> arr_types;
 	if (arr_types == 0 || arr_types > 3) 
 	{

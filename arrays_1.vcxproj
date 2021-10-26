@@ -147,7 +147,7 @@
     <ClCompile Include="Statistics.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Сonstants.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="FillRand.h" />
     <ClInclude Include="Shift.h" />
     <ClInclude Include="Sort.h" />

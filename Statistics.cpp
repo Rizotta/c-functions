@@ -1,4 +1,4 @@
-#include"Statistics.h"
+﻿#include"Statistics.h"
 // Sum
 int Sum(int arr[], const unsigned int N)
 {

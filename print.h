@@ -1,13 +1,16 @@
-#pragma once
+п»ї#pragma once
 #include"stdafx.h"
-#include"Сonstants.h"
+#include"Constants.h"
 
-void Print(int arr[], const unsigned int N);									// Выводит массив на экран
+// Р’С‹РІРѕРґРёС‚ РјР°СЃСЃРёРІ РЅР° СЌРєСЂР°РЅ
+void Print(int arr[], const unsigned int N);									
 void Print(double arr[], const unsigned int N);										
 void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);	
-	
-void ReversePrint(int arr[], const unsigned int N);								// Выводит массив в обратном порядке
+
+// Р’С‹РІРѕРґРёС‚ РјР°СЃСЃРёРІ РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
+void ReversePrint(int arr[], const unsigned int N);								
 void ReversePrint(double arr[], const unsigned int N);										
 void ReversePrint(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);	
 
-void PrintLine();																// Печатает линию - разделитель
+// Р’С‹РІРѕРґРёС‚ Р»РёРЅРёСЋ - СЂР°Р·РґРµР»РёС‚РµР»СЊ
+void PrintLine();																
