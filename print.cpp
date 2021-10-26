@@ -1,5 +1,5 @@
 #include"Print.h"
-
+// Print
 void Print(int arr[], const unsigned int N)
 {
 	for (int i = 0; i < N; i++)
@@ -30,6 +30,7 @@ void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS
 	}
 }
 
+// ReversePrint
 void ReversePrint(int arr[], const unsigned int N)
 {
 	for (int i = N - 1; i >= 0; i--)
@@ -50,7 +51,7 @@ void ReversePrint(double arr[], const unsigned int N)
 
 void ReversePrint(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
-	for (int i = ROWS - 1; i >= 0 ; i--)
+	for (int i = 0 ; i	< ROWS ; i++)
 	{
 		for (int j = COLS - 1; j >= 0; j--)
 		{
@@ -58,4 +59,10 @@ void ReversePrint(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned i
 		}
 		cout << endl;
 	}
+}
+
+// PrintLine
+void PrintLine()
+{
+	cout << "---------------------------------------------------------------------------------" << endl;
 }

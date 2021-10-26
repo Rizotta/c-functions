@@ -144,12 +144,14 @@
     <ClCompile Include="Print.cpp" />
     <ClCompile Include="Shift.cpp" />
     <ClCompile Include="Sort.cpp" />
+    <ClCompile Include="Statistics.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="constants.h" />
+    <ClInclude Include="Сonstants.h" />
     <ClInclude Include="FillRand.h" />
     <ClInclude Include="Shift.h" />
     <ClInclude Include="Sort.h" />
+    <ClInclude Include="Statistics.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Print.h" />
   </ItemGroup>

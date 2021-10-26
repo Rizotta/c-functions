@@ -1,6 +1,6 @@
 #pragma once
 #include"stdafx.h"
-#include"constants.h"
+#include"Сonstants.h"
 #include"Print.h"
 
 void Sort(int arr[], const unsigned int N);											// Сортирует массив c целыми значениями в порядке возрастания
