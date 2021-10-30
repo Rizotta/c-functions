@@ -29,3 +29,17 @@ void FillRand(int arr[ROWS][COLS], const unsigned int COLS, const unsigned int R
 		}
 	}
 }
+
+void FillRand(double arr[ROWS][COLS], const unsigned int COLS, const unsigned int ROWS, int minRand, int maxRand)
+{
+	minRand *= 100;
+	maxRand *= 100;
+	for (int i = 0; i < COLS; i++)
+	{
+		for (int j = 0; j < ROWS; j++)
+		{
+			arr[i][j] = rand() % ((long long)maxRand - minRand) + minRand;
+			arr[i][j] /= 100;
+		}
+	}
+}

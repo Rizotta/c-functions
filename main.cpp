@@ -13,9 +13,9 @@ void main()
 
 	setlocale(LC_ALL, "");
 	int arr_types;
-	cout << "Сколько массивов отобразить? \n1 - одномерный int,\n2 - и одномерный double, \n3 - и двумерный int";
+	cout << "Сколько массивов отобразить? \n1 - одномерный int,\n2 - и одномерный double, \n3 - и двумерный int, \n4 - плюс двумерный double";
 	cout << "\nВведите количество = > "; cin >> arr_types;
-	if (arr_types == 0 || arr_types > 3) 
+	if (arr_types == 0 || arr_types > 4) 
 	{
 		cout << "Вы выбрали некорректное количество. Выход.";
 		return;
@@ -91,6 +91,29 @@ void main()
 		cout << "Среднее арифметическое: \t" << Avg(i_arr_2, ROWS, COLS) << endl;
 		cout << "Минимальное значение массива: \t" << MinValueIn(i_arr_2, ROWS, COLS) << endl;
 		cout << "Максимальное значение массива: \t" << MaxValueIn(i_arr_2, ROWS, COLS) << endl;
+		cout << endl;
+	}
+	if (arr_types > 3)
+	{
+		PrintLine();
+		cout << endl << "Четвёртый двумерный массив, значения типа double: \n";
+		double i_arr_22[ROWS][COLS];
+		FillRand(i_arr_22, ROWS, COLS);
+		Print(i_arr_22, ROWS, COLS);
+		cout << endl;
+		cout << "Четвёртый массив в обратном порядке: \n";
+		ReversePrint(i_arr_22, ROWS, COLS);
+		cout << endl << "Четвёртый отсортированный массив: \n";
+		Sort(i_arr_22, ROWS, COLS);
+		cout << endl << "Четвёртый массив, сдвинутый на " << shift << " влево: \n";
+		ShiftLeft(i_arr_22, ROWS, COLS, shift);
+		cout << endl << "Четвёртый массив, сдвинутый на " << shift << " вправо: \n";
+		ShiftRight(i_arr_22, ROWS, COLS, shift);
+		cout << endl << "Статистика четвёртому массивау. \n";
+		cout << "Сумма элементов: \t\t" << Sum(i_arr_22, ROWS, COLS) << endl;
+		cout << "Среднее арифметическое: \t" << Avg(i_arr_22, ROWS, COLS) << endl;
+		cout << "Минимальное значение массива: \t" << MinValueIn(i_arr_22, ROWS, COLS) << endl;
+		cout << "Максимальное значение массива: \t" << MaxValueIn(i_arr_22, ROWS, COLS) << endl;
 		cout << endl;
 	}
 }

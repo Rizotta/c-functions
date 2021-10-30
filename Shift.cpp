@@ -47,6 +47,27 @@ void ShiftLeft(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int 
 	Print(arr, ROWS, COLS);
 }
 
+void ShiftLeft(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
+{
+	for (int i = 0; i < ROWS; i++) {
+		double temp;
+		for (int k = 0; k < shift; k++)
+		{
+			for (int j = 0; j < COLS; j++)
+			{
+				if (j == 0) {
+					temp = arr[i][0];
+				}
+				else {
+					arr[i][j - 1] = arr[i][j];
+				}
+			}
+			arr[i][COLS - 1] = temp;
+		}
+	}
+	Print(arr, ROWS, COLS);
+}
+
 // ShiftRight
 void ShiftRight(int arr[], const unsigned int N, int shift)
 {
@@ -59,6 +80,11 @@ void ShiftRight(double arr[], const unsigned int N, int shift)
 }
 
 void ShiftRight(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
+{
+	ShiftLeft(arr, ROWS, COLS, COLS - shift);
+}
+
+void ShiftRight(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
 {
 	ShiftLeft(arr, ROWS, COLS, COLS - shift);
 }

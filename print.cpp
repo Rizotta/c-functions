@@ -30,6 +30,18 @@ void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS
 	}
 }
 
+void Print(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
 // ReversePrint
 void ReversePrint(int arr[], const unsigned int N)
 {
@@ -52,6 +64,18 @@ void ReversePrint(double arr[], const unsigned int N)
 void ReversePrint(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
 	for (int i = 0 ; i	< ROWS ; i++)
+	{
+		for (int j = COLS - 1; j >= 0; j--)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
+void ReversePrint(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = COLS - 1; j >= 0; j--)
 		{

@@ -44,3 +44,20 @@ void Sort(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 	}
 	Print(arr, ROWS, COLS);
 }
+
+void Sort(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int z = j; z > 0 and arr[i][z] < arr[i][z - 1]; z--)
+			{
+				double temp = arr[i][z];
+				arr[i][z] = arr[i][z - 1];
+				arr[i][z - 1] = temp;
+			}
+		}
+	}
+	Print(arr, ROWS, COLS);
+}

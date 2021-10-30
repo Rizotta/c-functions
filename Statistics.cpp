@@ -33,6 +33,19 @@ int Sum(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 	return sum;
 }
 
+double Sum(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	double sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
+	return sum;
+}
+
 // Avg
 double Avg(int arr[], const unsigned int N)
 {
@@ -47,6 +60,11 @@ double Avg(double arr[], const unsigned int N)
 double Avg(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
 	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
+}
+
+double Avg(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	return Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 
 // MinValueIn
@@ -83,6 +101,19 @@ int MinValueIn(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int 
 	return min;
 }
 
+double MinValueIn(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	double min = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (min > arr[i][j]) min = arr[i][j];
+		}
+	}
+	return min;
+}
+
 // MaxValueIn
 int MaxValueIn(int arr[], const unsigned int N)
 {
@@ -107,6 +138,19 @@ double MaxValueIn(double arr[], const unsigned int N)
 int MaxValueIn(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
 	int max = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (max < arr[i][j]) max = arr[i][j];
+		}
+	}
+	return max;
+}
+
+double MaxValueIn(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	double max = arr[0][0];
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
