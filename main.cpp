@@ -1,6 +1,4 @@
 ﻿#include<iostream>
-//#include<time.h>	// библиотека на С, чтобы случайные числа были разными
-//#include<ctime>		// такая же библиотека на С++, чтобы случайные числа были разными
 using namespace std;
 
 const unsigned int N = 5;
@@ -16,61 +14,43 @@ void FillRand(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int C
 void FillRand(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int minRand = 0, int maxRand = 100);
 
 // Выводит массив на экран
-void Print(int arr[], const unsigned int N);
-void Print(double arr[], const unsigned int N);
-void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
-void Print(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T>void Print(T arr[], const unsigned int n);
+template<typename T>void Print(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 
 // Выводит массив на экран в обратном порядке
-void ReversePrint(int arr[], const unsigned int N);	
-void ReversePrint(double arr[], const unsigned int N);
-void ReversePrint(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
-void ReversePrint(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T>void ReversePrint(T arr[], const unsigned int n);
+template<typename T>void ReversePrint(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned COLS);
 
 // Выводит линию - разделитель на экран
 void PrintLine();
 
 // Сортировка массива
-void Sort(int arr[], const unsigned int N);											
-void Sort(double arr[], const unsigned int N);										
-void Sort(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
-void Sort(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T>void Sort(T arr[], const unsigned int N);
+template<typename T>void Sort(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned COLS);
 
 // Сдвиг влево
-void ShiftLeft(int arr[], const unsigned int N, int shift);											
-void ShiftLeft(double arr[], const unsigned int N, int shift);										
-void ShiftLeft(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
-void ShiftLeft(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
+template<typename T> void ShiftLeft(T arr[], const unsigned int N, int shift);
+template<typename T> void ShiftLeft(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
 
 // Сдвиг вправо
-void ShiftRight(int arr[], const unsigned int N, int shift);										
-void ShiftRight(double arr[], const unsigned int N, int shift);										
-void ShiftRight(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
-void ShiftRight(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
+template<typename T> void ShiftRight(T arr[], const unsigned int N, int shift);
+template<typename T> void ShiftRight(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
 
 // Сумма
-int Sum(int arr[], const unsigned int N);												
-double Sum(double arr[], const unsigned int N);
-int Sum(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
-double Sum(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T> T Sum(T arr[], const unsigned int n);
+template<typename T> T Sum(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 
 // Среднее значение
-double Avg(int arr[], const unsigned int N);											
-double Avg(double arr[], const unsigned int N);
-double Avg(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
-double Avg(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T> double Avg(T arr[], const unsigned int n);
+template<typename T> double Avg(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 
 // Минимальное значение в массиве
-int MinValueIn(int arr[], const unsigned int N);										
-double MinValueIn(double arr[], const unsigned int N);
-int MinValueIn(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
-double MinValueIn(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T> T MinValueIn(T arr[], const unsigned int n);
+template<typename T> T MinValueIn(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 
 // Максимальное значение в массиве
-int MaxValueIn(int arr[], const unsigned int N);										
-double MaxValueIn(double arr[], const unsigned int N);
-int MaxValueIn(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
-double MaxValueIn(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T> T MaxValueIn(T arr[], const unsigned int n);
+template<typename T> T MaxValueIn(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 
 void main()
 {
@@ -172,7 +152,7 @@ void main()
 		ShiftLeft(i_arr_22, ROWS, COLS, shift);
 		cout << endl << "Четвёртый массив, сдвинутый на " << shift << " вправо: \n";
 		ShiftRight(i_arr_22, ROWS, COLS, shift);
-		cout << endl << "Статистика четвёртому массивау. \n";
+		cout << endl << "Статистика четвёртого массива. \n";
 		cout << "Сумма элементов: \t\t" << Sum(i_arr_22, ROWS, COLS) << endl;
 		cout << "Среднее арифметическое: \t" << Avg(i_arr_22, ROWS, COLS) << endl;
 		cout << "Минимальное значение массива: \t" << MinValueIn(i_arr_22, ROWS, COLS) << endl;
@@ -184,7 +164,7 @@ void main()
 // FillRand
 void FillRand(int arr[], const unsigned int N, int minRand, int maxRand)
 {
-	for (int i = 0; i < N; i++)
+	for (unsigned int i = 0; i < N; i++)
 	{
 		arr[i] = rand() % (maxRand - minRand) + minRand;
 	}
@@ -194,7 +174,7 @@ void FillRand(double arr[], const unsigned int N, int minRand, int maxRand)
 {
 	minRand *= 100;
 	maxRand *= 100;
-	for (int i = 0; i < N; i++)
+	for (unsigned int i = 0; i < N; i++)
 	{
 		arr[i] = rand() % ((long long)maxRand - minRand) + minRand;
 		arr[i] /= 100;
@@ -203,9 +183,9 @@ void FillRand(double arr[], const unsigned int N, int minRand, int maxRand)
 
 void FillRand(int arr[ROWS][COLS], const unsigned int COLS, const unsigned int ROWS, int minRand, int maxRand)
 {
-	for (int i = 0; i < COLS; i++)
+	for (unsigned int i = 0; i < COLS; i++)
 	{
-		for (int j = 0; j < ROWS; j++)
+		for (unsigned int j = 0; j < ROWS; j++)
 		{
 			arr[i][j] = rand() % (maxRand - minRand) + minRand;
 		}
@@ -216,9 +196,9 @@ void FillRand(double arr[ROWS][COLS], const unsigned int COLS, const unsigned in
 {
 	minRand *= 100;
 	maxRand *= 100;
-	for (int i = 0; i < COLS; i++)
+	for (unsigned int i = 0; i < COLS; i++)
 	{
-		for (int j = 0; j < ROWS; j++)
+		for (unsigned int j = 0; j < ROWS; j++)
 		{
 			arr[i][j] = rand() % ((long long)maxRand - minRand) + minRand;
 			arr[i][j] /= 100;
@@ -226,43 +206,21 @@ void FillRand(double arr[ROWS][COLS], const unsigned int COLS, const unsigned in
 	}
 }
 
-// Print
-void Print(int arr[], const unsigned int N)
+ //Print
+template<typename T>void Print(T arr[], const unsigned int n) 
 {
-	for (int i = 0; i < N; i++)
+	for (unsigned int i = 0; i < N; i++)
 	{
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
 }
 
-void Print(double arr[], const unsigned int N)
+template<typename T>void Print(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
-	for (int i = 0; i < N; i++)
+	for (unsigned int i = 0; i < ROWS; i++)
 	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-
-void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-}
-
-
-void Print(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
+		for (unsigned int j = 0; j < COLS; j++)
 		{
 			cout << arr[i][j] << "\t";
 		}
@@ -271,7 +229,7 @@ void Print(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int C
 }
 
 // ReversePrint
-void ReversePrint(int arr[], const unsigned int N)
+template<typename T>void ReversePrint(T arr[], const unsigned int n)
 {
 	for (int i = N - 1; i >= 0; i--)
 	{
@@ -280,30 +238,9 @@ void ReversePrint(int arr[], const unsigned int N)
 	cout << endl;
 }
 
-void ReversePrint(double arr[], const unsigned int N)
+template<typename T>void ReversePrint(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned COLS)
 {
-	for (int i = N - 1; i >= 0; i--)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-
-void ReversePrint(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = COLS - 1; j >= 0; j--)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-}
-
-void ReversePrint(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
+	for (unsigned int i = 0; i < ROWS; i++)
 	{
 		for (int j = COLS - 1; j >= 0; j--)
 		{
@@ -320,13 +257,13 @@ void PrintLine()
 }
 
 // Sort
-void Sort(int arr[], const unsigned int N)
+template<typename T>void Sort(T arr[], const unsigned int N)
 {
-	for (int i = 1; i < N; i++)
+	for (unsigned int i = 1; i < N; i++)
 	{
-		for (int j = i; j > 0 and arr[j - 1] > arr[j]; j--)
+		for (unsigned int j = i; j > 0 and arr[j - 1] > arr[j]; j--)
 		{
-			int temp = arr[j];
+			T temp = arr[j];
 			arr[j] = arr[j - 1];
 			arr[j - 1] = temp;
 		}
@@ -334,46 +271,15 @@ void Sort(int arr[], const unsigned int N)
 	Print(arr, N);
 }
 
-void Sort(double arr[], const unsigned int N)
+template<typename T>void Sort(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned COLS)
 {
-	for (int i = 0; i < N; i++)
+	for (unsigned int i = 0; i < ROWS; i++)
 	{
-		for (int j = i; j > 0 and arr[j - 1] > arr[j]; j--)
+		for (unsigned int j = 0; j < COLS; j++)
 		{
-			double temp = arr[j];
-			arr[j] = arr[j - 1];
-			arr[j - 1] = temp;
-		}
-	}
-	Print(arr, N);
-}
-
-void Sort(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			for (int z = j; z > 0 and arr[i][z] < arr[i][z - 1]; z--)
+			for (unsigned int z = j; z > 0 and arr[i][z] < arr[i][z - 1]; z--)
 			{
-				int temp = arr[i][z];
-				arr[i][z] = arr[i][z - 1];
-				arr[i][z - 1] = temp;
-			}
-		}
-	}
-	Print(arr, ROWS, COLS);
-}
-
-void Sort(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			for (int z = j; z > 0 and arr[i][z] < arr[i][z - 1]; z--)
-			{
-				double temp = arr[i][z];
+				T temp = arr[i][z];
 				arr[i][z] = arr[i][z - 1];
 				arr[i][z - 1] = temp;
 			}
@@ -383,11 +289,11 @@ void Sort(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int CO
 }
 
 // ShiftLeft
-void ShiftLeft(int arr[], const unsigned int N, int shift)
+template<typename T> void ShiftLeft(T arr[], const unsigned int N, int shift)
 {
-	int temp;
+	T temp = T();
 	for (int i = 0; i < shift; i++) {
-		for (int j = 0; j < N; j++)
+		for (unsigned int j = 0; j < N; j++)
 		{
 			(j == 0) ? temp = arr[0] : arr[j - 1] = arr[j];
 		}
@@ -396,47 +302,13 @@ void ShiftLeft(int arr[], const unsigned int N, int shift)
 	Print(arr, N);
 }
 
-void ShiftLeft(double arr[], const unsigned int N, int shift)
+template<typename T> void ShiftLeft(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
 {
-	int temp;
-	for (int i = 0; i < shift; i++) {
-		for (int j = 0; j < N; j++)
-		{
-			(j == 0) ? temp = arr[0] : arr[j - 1] = arr[j];
-		}
-		arr[N - 1] = temp;
-	}
-	Print(arr, N);
-}
-
-void ShiftLeft(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
-{
-	for (int i = 0; i < ROWS; i++) {
-		int temp;
+	for (unsigned int i = 0; i < ROWS; i++) {
+		T temp = T();
 		for (int k = 0; k < shift; k++)
 		{
-			for (int j = 0; j < COLS; j++)
-			{
-				if (j == 0) {
-					temp = arr[i][0];
-				}
-				else {
-					arr[i][j - 1] = arr[i][j];
-				}
-			}
-			arr[i][COLS - 1] = temp;
-		}
-	}
-	Print(arr, ROWS, COLS);
-}
-
-void ShiftLeft(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
-{
-	for (int i = 0; i < ROWS; i++) {
-		double temp;
-		for (int k = 0; k < shift; k++)
-		{
-			for (int j = 0; j < COLS; j++)
+			for (unsigned int j = 0; j < COLS; j++)
 			{
 				if (j == 0) {
 					temp = arr[i][0];
@@ -452,66 +324,33 @@ void ShiftLeft(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned i
 }
 
 // ShiftRight
-void ShiftRight(int arr[], const unsigned int N, int shift)
+template<typename T> void ShiftRight(T arr[], const unsigned int N, int shift)
 {
 	ShiftLeft(arr, N, N - shift);
 }
 
-void ShiftRight(double arr[], const unsigned int N, int shift)
-{
-	ShiftLeft(arr, N, N - shift);
-}
-
-void ShiftRight(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
-{
-	ShiftLeft(arr, ROWS, COLS, COLS - shift);
-}
-
-void ShiftRight(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
+template<typename T> void ShiftRight(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
 {
 	ShiftLeft(arr, ROWS, COLS, COLS - shift);
 }
 
 // Sum
-int Sum(int arr[], const unsigned int N)
+template<typename T>T Sum(T arr[], const unsigned int n)
 {
-	int sum = 0;
-	for (int i = 0; i < N; i++)
+	T sum = T();
+	for (unsigned int i = 0; i < n; i++)
 	{
 		sum += arr[i];
 	}
 	return sum;
 }
 
-double Sum(double arr[], const unsigned int N)
+template<typename T> T Sum(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
-	double sum = 0;
-	for (int i = 0; i < N; i++)
+	T sum = T();
+	for (unsigned int i = 0; i < ROWS; i++)
 	{
-		sum += arr[i];
-	}
-	return sum;
-}
-
-int Sum(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	int sum = 0;
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			sum += arr[i][j];
-		}
-	}
-	return sum;
-}
-
-double Sum(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	double sum = 0;
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
+		for (unsigned int j = 0; j < COLS; j++)
 		{
 			sum += arr[i][j];
 		}
@@ -520,114 +359,57 @@ double Sum(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int C
 }
 
 // Avg
-double Avg(int arr[], const unsigned int N)
+template<typename T> double Avg(T arr[], const unsigned int n)
 {
 	return (double)Sum(arr, N) / N;
 }
 
-double Avg(double arr[], const unsigned int N)
-{
-	return Sum(arr, N) / N;
-}
-
-double Avg(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+template<typename T> double Avg(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
 	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 
-double Avg(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	return Sum(arr, ROWS, COLS) / (ROWS * COLS);
-}
-
 // MinValueIn
-int MinValueIn(int arr[], const unsigned int N)
+template<typename T> T MinValueIn(T arr[], const unsigned int n)
 {
-	int min = arr[0];
-	for (int i = 0; i < N; i++)
+	T min = arr[0];
+	for (unsigned int i = 0; i < N; i++)
 	{
 		if (min > arr[i]) min = arr[i];
 	}
 	return min;
 }
 
-double MinValueIn(double arr[], const unsigned int N)
+template<typename T> T MinValueIn(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
-	double min = arr[0];
-	for (int i = 0; i < N; i++)
+	T min = arr[0][0];
+	for (unsigned int i = 0; i < ROWS; i++)
 	{
-		if (min > arr[i]) min = arr[i];
-	}
-	return min;
-}
-
-int MinValueIn(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	int min = arr[0][0];
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
+		for (unsigned int j = 0; j < COLS; j++)
 		{
 			if (min > arr[i][j]) min = arr[i][j];
 		}
 	}
 	return min;
 }
-
-double MinValueIn(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	double min = arr[0][0];
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			if (min > arr[i][j]) min = arr[i][j];
-		}
-	}
-	return min;
-}
-
 
 // MaxValueIn
-int MaxValueIn(int arr[], const unsigned int N)
+template<typename T> T MaxValueIn(T arr[], const unsigned int n)
 {
-	int max = arr[0];
-	for (int i = 0; i < N; i++)
+	T max = arr[0];
+	for (unsigned int i = 0; i < N; i++)
 	{
 		if (max < arr[i]) max = arr[i];
 	}
 	return max;
 }
 
-double MaxValueIn(double arr[], const unsigned int N)
+template<typename T> T MaxValueIn(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
-	double max = arr[0];
-	for (int i = 0; i < N; i++)
+	T max = arr[0][0];
+	for (unsigned int i = 0; i < ROWS; i++)
 	{
-		if (max < arr[i]) max = arr[i];
-	}
-	return max;
-}
-
-int MaxValueIn(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	int max = arr[0][0];
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			if (max < arr[i][j]) max = arr[i][j];
-		}
-	}
-	return max;
-}
-
-double MaxValueIn(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
-{
-	double max = arr[0][0];
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
+		for (unsigned int j = 0; j < COLS; j++)
 		{
 			if (max < arr[i][j]) max = arr[i][j];
 		}
